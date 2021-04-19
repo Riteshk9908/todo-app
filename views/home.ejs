@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do App</title>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <div>
+      <h1><%= locals.title %></h1>
+    </div>
+    <div class="container">
+      <h1 class="head"> TODO-APP </h1>
+      <form action="/create-task" method="POST" style="border: 1px solid #d2d7da;">
+        <div
+          class=""
+        >
+          <input
+            class="arrange"
+            type="text"
+            id="input-task"
+            name="description"
+            placeholder="What do you need to do?"
+          />
+          <label class="" for="input-task"
+            > <span id="desc"> Description </span> </label
+          >
+        </div>
+        <br />
+        <div
+          class="arrange"
+        >
+          <select class="" id="category" name="category">
+            <option>Choose a category</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="Cleaning">Cleaning</option>
+            <option value="Other">Other</option>
+          </select>
+          <label class="" for="category"> <span id="cat"> Category </span></label>
+        </div>
+        <br />
+        <div
+          class="arrange">
+          <input
+            class=""
+            type="date"
+            name="date"
+            id="input-date"
+          />
+          <label class="" for="input-date"> <span id="Due">  Due Date </span></label>
+        </div>
+        <div class="button">
+          <button
+            class="arrange"
+            type="submit"
+            style="background-color: greenyellow"
+          >
+            <i class="fas fa-plus"></i> &nbsp; Add Task
+          </button>
+          &nbsp;
+          <button
+            class="arrange"
+            type="submit"
+            form="delete-form"
+            style="background-color: red"
+          >
+            <i class="fas fa-minus"></i> &nbsp; Delete Task
+          </button>
+        </div>
+      </form>
+
+
+          
+      <form style="border: 1px solid #d2d7da;"
+        action="/delete-task"
+        id="delete-form"
+        name="delete-task"
+        method="GET"
+      >
+        <table class="arrange">
+          <tbody>
+            <% for (let i of task) { %>
+            <tr>
+              <td>
+                <label class="pure-material-checkbox">
+                  <input
+                    type="checkbox"
+                    name="<%= i.id %>"
+                    style="cursor: pointer"
+                  />
+                  <span></span>
+                </label>
+              </td>
+              <td style="color: rgb(236, 225, 225)">
+                <%= i.description %>
+              </td>
+              <td style="color: rgb(236, 225, 225)"><%= i.date %></td>
+              <td style="color: rgb(236, 225, 225)"><div><%= i.category %></div></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+  <script src="/js/home.js"></script>
+</html>

@@ -1,0 +1,36 @@
+ .container{
+   position: relative;
+   margin-left: 200px;
+   background-image: url("https://i.redd.it/e1jefsd54tq41.png");
+   width: 50%;
+   border-width:2px;  
+    border-style:solid;
+    border-radius: 3px;
+ }
+ .head{
+   position: relative;
+   left:30%;
+   color: rgb(250, 247, 252);
+   
+ }
+ .arrange{
+   margin: 20px;
+ }
+ #desc{
+   background-color: rgb(57, 60, 231);
+   border-width:2px;  
+    border-style:solid;
+
+ }
+ 
+#cat{
+  background-color: rgb(57, 60, 231);
+  border-width:2px;  
+   border-style:solid;
+    
+}
+#Due{
+  background-color: rgb(57, 60, 231);
+  border-width:2px;  
+   border-style:solid;
+}
